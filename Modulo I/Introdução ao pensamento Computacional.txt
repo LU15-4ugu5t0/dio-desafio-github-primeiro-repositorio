@@ -1,0 +1,9 @@
+pilares:
+Decomposição 
+Padrões
+Abistração
+Algoritimo
+	vetores e matrizes:
+		vetor sequecia de sequencia de dados - pré fixado
+		matriz  coleção de variaveis horizontal e vertical
+	

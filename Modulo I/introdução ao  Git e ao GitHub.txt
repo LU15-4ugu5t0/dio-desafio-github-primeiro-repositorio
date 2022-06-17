@@ -1,0 +1,124 @@
+Comandos Basicos:
+ GUIxCLI
+cd		cd 
+dir		ls
+mkdir 		mkdir
+del / rmdir 	rm -rf 
+
+cd: "/ na base do sistema" ".. volta uma base do terminal" 
+"tab completa o nome arquivo"
+navega pelos diretorios 
+dir-ls:
+lista os diretorios 
+mkdir:
+faz diretorios 
+( hello "> redirecionador de fluxo" hello.txt windows )
+( hello "> redirecionador de fluxo" hello.txt linux )
+del/rmdir-rm - rf:
+del(deleta tudo que  tem na pasta workspace;
+rmdir(workspace /s/q) windows
+rm - rf remove a pasta completa linux
+				Instalação do git:
+<git credential maneger core>
+				Funcionamento do git:
+sha1:
+algoritimo de criptografia 
+40 digitos 
+e modifica a cada modificação do arquivo
+	openssl sha1 cria o algoritimo sha1
+				Objetos internos do Git:
+blobs:
+	echo 'conteudo' | git hash-obect --stdin(blob)
+	echo -e 'blob 9\0conteudo' |openssl sha1
+		metadados são informações sobre o objeto:
+trees:
+	trees são :
+	\0
+	blob sha1 texto.txt
+	guarda nomes arquivos e diretorios e tem su proprio sha1
+commits:
+	aponta para :
+arvore "sha1"
+parente "sha1anterior" 
+autor "luis" 
+mensagen - "inicia"
+timestamp - "data e hora de criação"
+Possue - sha1
+				chave SSH e Token:
+ssh - segura e incriptada entre a maquina e  o github:
+
+ssh-keygen -t ed25519 -C luisaucosousa@gmail.com
+
+(/c/Users/Luis Augusto/.ssh/id_ed25519)
+
+cat visualisa o conteudo da chave;
+
+para utilizar a chave iniciar ssh agent:
+
+eval $(ssh-agent -s)
+
+agent pid 150 
+agora 
+ssh-add privada
+
+quando tem protocolo ssh fixo na maquina não pode usar https:
+tem que usar ssh :
+git clone  ssh.git
+
+(o que é pid)
+token:
+  generate new token;
+	 			Primeiros comndos com GIT:
+
+git init - inicia para gerenciar e versionar o codigo (ls -a :ocultos )
+global ou apenas repositório;
+
+git add 
+git commit
+				Ciclo de vida dos arquivos dentro do git:
+git init cria um repositório
+
+utracked 
+              unmudifeid	modified	staged
+ |-------------------------------------------------> adiciona  arquivo
+                    |----------------> edita o arquivo
+				   |--------------->Stage o arquivo
+ <-------------------|remove o aqruivo
+		  <--------------------------------|
+git init
+criar arquivo strogonnoff - untracked
+ git add --> staged
+unmodified-----após editado é comparado o sha1 ---modified
+git add ---- staged aguardando para ecexutar outra ação 
+unmodified ---- remove untraced
+staged -------prepara para fazer parte de um commite ---- retorna para unmodified
+
+desenvolvimento  ambiente: git status define a situação do repositorio
+working directory
+stagin area}
+commite                            git add * add tudo para ser commitado
+  |				   echo > nome.exens cria arquivo
+local repository
+                                   pra mover para outros repositorios (mv nome.md ./nome )
+servidor:
+remote reposiitory apenas commites
+				trabalhando com o GitHub:
+git config --list verificar a lista de configurações 
+git config --global --unset user.name tirar o email ou user name :
+para empurrar o repositorio local para o remoto primeiro adiciona a origim
+git remote add origin (link do repostorio)
+ git push origin master---- breanch 
+				resolvendo conflitos com o GitHub:
+conflito de merge;
+git pull origin master 
+git remote -v todos os repositorios baixados;
+
+
+
+
+
+
+
+ 
+
+
